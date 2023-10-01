@@ -26,6 +26,20 @@ app.get('/api/perso', (req, res) => {
         res.send(docs)
     })
 })
+
+// Read one
+app.get('/api/perso/:id', (req, res) => {
+    db.find({_id:req.params.id}, (err, docs) => {
+        if (err) console.log(err)
+        res.send(docs)
+    })
+})
+
+// Update
+app.patch('/api/perso/:id', (req, res) => {
+    db.update({ _id: req.params.id }, { $set: { ...req.body } })
+    res.send(req.body)
+})
 app.listen(PORT, () => {
     console.log(`le serveur est lancé sur le port :${PORT}`)
 })

@@ -8,3 +8,16 @@ Content-Type: application/json
 
 ###
 GET http://localhost:8000/api/perso
+
+
+###
+GET http://localhost:8000/api/perso/46nLVaElaTFLr2l9
+
+###
+PATCH  http://localhost:8000/api/perso/46nLVaElaTFLr2l9 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "julien ",
+    "weapon": "dave "
+}
